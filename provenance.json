@@ -1,0 +1,26 @@
+{
+  "upstream_repository": "https://github.com/PaperMC/Paper",
+  "upstream_commit": "cc7b98af634be07c9b3581306c7b6af33caa3ff2",
+  "local_implementation_commit": "7d763aa515f1208fce4e6e124fcbbcfce9cdb8d7",
+  "local_validation_commit": "fe0c7822f0b40c4e23e47bd5bed16b4a0235def0",
+  "minecraft": "26.4-snapshot-3",
+  "mache": "io.papermc:mache:26.4-snapshot-3+build.1",
+  "mache_original_sha256": "e74865ffe64350fdeeccbb176df8e652b84762c075b81ca1e324253fc2b3d21b",
+  "patch_sha256": "7c8354416399b1118f2b2c5dde5a24cda90fe47bd7f62e173032295a398375d7",
+  "patch_paths": [
+    "gradle.properties",
+    "paper-api",
+    "paper-generator",
+    "paper-server",
+    "test-plugin",
+    "scripts/local-port/mache.init.gradle",
+    "scripts/local-port/prepare-mache.py",
+    "scripts/local-port/package-probe.py",
+    "scripts/local-port/run-private-server.py",
+    "scripts/local-port/inspect-world.py"
+  ],
+  "excluded": "Private operational data, worlds, binaries, local review/planning documents, historical conflict-resolution scripts",
+  "original_generated_java_tree": "c868e7c4cdc61f9e936c625721a33266546563fb",
+  "license": "GPL-3.0; inherited permissive portions retain their upstream terms",
+  "changed_files": 222
+}

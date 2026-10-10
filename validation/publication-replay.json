@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-10",
+  "source": "Fresh directory fetched directly from official Paper GitHub repository, using published-kit scripts",
+  "patch_checksum_verified": true,
+  "exact_selected_source_diff_matches_original": true,
+  "generated_java_tree": "c868e7c4cdc61f9e936c625721a33266546563fb",
+  "generated_java_tree_matches_original": true,
+  "source_patches_applied": 935,
+  "feature_patches_applied": 38,
+  "resource_patches_applied": 3,
+  "build": "passed",
+  "tests": {
+    "paper-api": {
+      "tests": 481,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2,
+      "passed": 479,
+      "xml_reports": 36
+    },
+    "paper-server": {
+      "tests": 10104,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 86,
+      "passed": 10018,
+      "xml_reports": 113
+    }
+  },
+  "passed": 10497,
+  "skipped": 88,
+  "cache_usage": "Gradle compilation/setup tasks reused the existing local cache; both test tasks executed in this replay",
+  "built_jar_sha256": "f01961db4ad10bab676e1a869179a77aa3f1a5fb5706fe3ebea8c21d9c410c00",
+  "built_jar_bytes": 98603974,
+  "runtime": [
+    {
+      "phase": 1,
+      "marker": "PORT_PROBE_PASS phase=1",
+      "matched": true,
+      "exit_code": 0,
+      "loopback": "127.0.0.1",
+      "jar_sha256": "f01961db4ad10bab676e1a869179a77aa3f1a5fb5706fe3ebea8c21d9c410c00",
+      "version": {
+        "name": "Paper 26.4 Snapshot 3",
+        "protocol": 1073742165
+      },
+      "elapsed_seconds": 14.28,
+      "checks": {
+        "phase": "1",
+        "minecraft": "26.4 Snapshot 3",
+        "bukkit": "26.4-snapshot-3.local-SNAPSHOT",
+        "regenerateChunk": "unsupported_expected_by_API",
+        "vanilla_chunk": "32,32_generated_with_solid_terrain",
+        "biome_precision": "world_and_snapshot_adjacent_blocks_pass",
+        "snapshot_blocks": "ice_crystal_icicle_state_sound_world_bridges_pass",
+        "snapshot_entities": "frostbite_spawn_livingentity_iceball_launch_freezing_registry_pass",
+        "structure": "create_fill_save_load_pdc_pass",
+        "custom_callbacks": "two_chunks_noise_surface_caves_order_vanilla_disabled_pass",
+        "chunk_pdc": "phase1_written_restart_pending"
+      }
+    },
+    {
+      "phase": 2,
+      "marker": "PORT_PROBE_PASS phase=2",
+      "matched": true,
+      "exit_code": 0,
+      "loopback": "127.0.0.1",
+      "jar_sha256": "f01961db4ad10bab676e1a869179a77aa3f1a5fb5706fe3ebea8c21d9c410c00",
+      "version": {
+        "name": "Paper 26.4 Snapshot 3",
+        "protocol": 1073742165
+      },
+      "elapsed_seconds": 11.49,
+      "checks": {
+        "phase": "2",
+        "minecraft": "26.4 Snapshot 3",
+        "bukkit": "26.4-snapshot-3.local-SNAPSHOT",
+        "chunk_pdc": "restart_roundtrip_pass",
+        "biome_precision": "world_and_snapshot_adjacent_blocks_pass",
+        "snapshot_blocks": "ice_crystal_icicle_state_sound_world_bridges_pass",
+        "snapshot_entities": "frostbite_spawn_livingentity_iceball_launch_freezing_registry_pass",
+        "structure": "restart_file_load_pdc_pass",
+        "custom_callbacks": "two_chunks_persisted_diamond_pass"
+      }
+    }
+  ],
+  "skip_difference_from_original": {
+    "additional_executed_tests": [
+      "PlayerProfileTest.testBuildGameProfile",
+      "PlayerProfileTest.testSignatureValidation",
+      "PlayerProfileTest.testProvidedValues"
+    ],
+    "condition": "EnableIfMojangServerAvailable"
+  }
+}

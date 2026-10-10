@@ -1,0 +1,6 @@
+/build/
+/Paper/
+/runtime/
+*.jar
+*.log
+__pycache__/

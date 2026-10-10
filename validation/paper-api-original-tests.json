@@ -1,0 +1,10 @@
+{
+  "source_commit": "fe0c7822f0b40c4e23e47bd5bed16b4a0235def0",
+  "origin": "Original local-port test XML, summarized during publication; excludes local paths and logs",
+  "tests": 481,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 2,
+  "passed": 479,
+  "xml_reports": 36
+}

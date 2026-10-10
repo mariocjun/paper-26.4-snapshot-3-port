@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-09",
+  "target": "26.4 Snapshot 3",
+  "java": 25,
+  "base_paper_commit": "cc7b98af634be07c9b3581306c7b6af33caa3ff2",
+  "branch_commit": "fe0c7822f0b40c4e23e47bd5bed16b4a0235def0",
+  "jar_build_commit": "7d763aa515f1208fce4e6e124fcbbcfce9cdb8d7",
+  "jar_sha256": "157e0a754512e82d757ebfa24cefaa484317876212d8dfcb8dd84963ede8f31d",
+  "generated_tree": "c868e7c4cdc61f9e936c625721a33266546563fb",
+  "clean_replay": {
+    "sources": 935,
+    "features": 38,
+    "status": "passed"
+  },
+  "tests": {
+    "paper-api": {
+      "tests": 481,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2
+    },
+    "paper-server": {
+      "tests": 10104,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 89
+    }
+  },
+  "executed_without_failure": 10494,
+  "skipped": 91,
+  "runtime": {
+    "fresh_normal_phase1": "passed",
+    "fresh_normal_restart_phase2": "passed",
+    "snapshot_block_entity_bridges": "passed",
+    "block_biomes_snapshot_persistence": "passed",
+    "chunk_and_structure_pdc": "passed",
+    "custom_generation_callback_order": "passed",
+    "upgrade_disposable_26.3_phase1_phase2": "passed",
+    "upgraded_stored_chunks": 1587,
+    "old_dataversion": 5023,
+    "target_dataversion": 5122,
+    "original_world_hashes_unchanged": true,
+    "binding": "127.0.0.1",
+    "protocol": 1073742165,
+    "exit_codes": 0
+  },
+  "origin": "Summary of original local validation; later publication replay is recorded separately",
+  "limits": [
+    "Snapshot 3 only; not a stable PaperMC release",
+    "Original upgrade input was a disposable flat-world copy; arbitrary world migration is unproven",
+    "Complete terrain fidelity and performance are unproven",
+    "Staged Bukkit generator has a stone fallback for condition-only custom material rules",
+    "Full plugin and proxy compatibility is unproven"
+  ]
+}
