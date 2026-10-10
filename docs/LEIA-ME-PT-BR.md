@@ -2,6 +2,8 @@
 
 Este repositório contém o port experimental que usamos para compilar e testar o servidor na **26.4 Snapshot 3**. É um experimento independente; não é uma versão oficial do PaperMC. Os arquivos de origem são obtidos do Paper no commit fixado em `provenance.json`.
 
+**Correção para mundos antigos, 10/10/2026:** a publicação inicial (`b63a9ad`) podia regenerar terreno ao carregar chunks anteriores à 26.4. O patch atual corrige a sobrescrita do estado de retrogen no Moonrise. Atualize este repositório e refaça a compilação numa pasta nova antes de testar uma cópia de mundo existente. O recibo está em [retrogen-preservation.json](../validation/retrogen-preservation.json). A correção não garante a migração de todo mundo ou a compatibilidade de todos os plugins.
+
 ## Preparar e compilar
 
 Instale **JDK 25**, Git e Python 3. Use Linux ou WSL. No Windows, abra o terminal do WSL; os comandos abaixo são Bash. Para compilar com melhor desempenho no WSL, clone dentro da pasta pessoal do Linux.

@@ -6,7 +6,7 @@
   "minecraft": "26.4-snapshot-3",
   "mache": "io.papermc:mache:26.4-snapshot-3+build.1",
   "mache_original_sha256": "e74865ffe64350fdeeccbb176df8e652b84762c075b81ca1e324253fc2b3d21b",
-  "patch_sha256": "7c8354416399b1118f2b2c5dde5a24cda90fe47bd7f62e173032295a398375d7",
+  "patch_sha256": "f23878baaf3e710bc205f77fff245991c779182b7458e0b3da58a4a88f631e02",
   "patch_paths": [
     "gradle.properties",
     "paper-api",
@@ -22,5 +22,8 @@
   "excluded": "Private operational data, worlds, binaries, local review/planning documents, historical conflict-resolution scripts",
   "original_generated_java_tree": "c868e7c4cdc61f9e936c625721a33266546563fb",
   "license": "GPL-3.0; inherited permissive portions retain their upstream terms",
-  "changed_files": 222
+  "changed_files": 223,
+  "current_generated_java_tree": "be38167fed4b4938f0a9f874fcceb0aa73eb3823",
+  "retrogen_fix_generated_source_commit": "6d6342e",
+  "retrogen_fix_root_source_commit": "f23d45270390dfb69ca4ac39b934471058f574e5"
 }

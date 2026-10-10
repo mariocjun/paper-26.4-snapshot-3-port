@@ -17077,3 +17077,46 @@ index 0000000..293ab33
 +        @Override public void generateCaves(WorldInfo world, Random random, int x, int z, ChunkData data) { this.stage(x, z, "noise,surface", "noise,surface,caves", Material.EMERALD_BLOCK, Material.DIAMOND_BLOCK, data); }
 +    }
 +}
+diff --git a/paper-server/patches/features/0039-Preserve-completed-retrogen-stages-when-updating-Moonrise-status.patch b/paper-server/patches/features/0039-Preserve-completed-retrogen-stages-when-updating-Moonrise-status.patch
+new file mode 100644
+index 0000000..1e593dd
+--- /dev/null
++++ b/paper-server/patches/features/0039-Preserve-completed-retrogen-stages-when-updating-Moonrise-status.patch
+@@ -0,0 +1,37 @@
++From 6d6342ef05c5427e2af3aa53c2c4bb8b1f0f6c3c Mon Sep 17 00:00:00 2001
++From: Codex local port <codex-local@localhost>
++Date: Sat, 10 Oct 2026 19:16:47 -0300
++Subject: [PATCH] Preserve completed retrogen stages when updating Moonrise
++ status
++
++---
++ .../scheduling/task/ChunkUpgradeGenericStatusTask.java      | 6 +++---
++ 1 file changed, 3 insertions(+), 3 deletions(-)
++
++diff --git a/ca/spottedleaf/moonrise/patches/chunk_system/scheduling/task/ChunkUpgradeGenericStatusTask.java b/ca/spottedleaf/moonrise/patches/chunk_system/scheduling/task/ChunkUpgradeGenericStatusTask.java
++index 78fd90e..f38677a 100644
++--- a/ca/spottedleaf/moonrise/patches/chunk_system/scheduling/task/ChunkUpgradeGenericStatusTask.java
+++++ b/ca/spottedleaf/moonrise/patches/chunk_system/scheduling/task/ChunkUpgradeGenericStatusTask.java
++@@ -88,7 +88,7 @@ public final class ChunkUpgradeGenericStatusTask extends ChunkProgressionTask im
++             if (generation) {
++                 if (((ChunkSystemChunkStatus)this.toStatus).moonrise$isEmptyGenStatus()) {
++                     if (chunk instanceof ProtoChunk) {
++-                        ((ProtoChunk)chunk).setPersistedStatus(this.toStatus);
+++                        ((ProtoChunk)chunk).setPersistedStatus(((ProtoChunk)chunk).updateRetroGenStatus(this.toStatus));
++                     }
++                     completing = true;
++                     this.complete(chunk, null);
++@@ -96,8 +96,8 @@ public final class ChunkUpgradeGenericStatusTask extends ChunkProgressionTask im
++                 }
++                 completeFuture = ChunkPyramid.GENERATION_PYRAMID.getStepTo(this.toStatus).apply(ctx, this.neighbours, this.fromChunk)
++                         .whenComplete((final ChunkAccess either, final Throwable throwable) -> {
++-                                    if (either instanceof ProtoChunk proto) {
++-                                        proto.setPersistedStatus(ChunkUpgradeGenericStatusTask.this.toStatus);
+++                                    if (either instanceof ProtoChunk proto && proto.getPersistedStatus().isBefore(ChunkUpgradeGenericStatusTask.this.toStatus)) {
+++                                        proto.setPersistedStatus(proto.updateRetroGenStatus(ChunkUpgradeGenericStatusTask.this.toStatus));
++                                     }
++                                 }
++                         );
++-- 
++2.43.0
++

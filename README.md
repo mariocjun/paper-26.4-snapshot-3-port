@@ -4,6 +4,8 @@ Reproduce the local Paper port used to build and play-test **Minecraft 26.4 Snap
 
 **Unofficial community experiment.** It is not a PaperMC release and is not affiliated with PaperMC or Mojang. It runs the snapshot server itself; the patch changes Paper's integrations, API and world generation support.
 
+**Existing-world correction, 2026-10-10:** the initial publication (`b63a9ad`) could regenerate terrain when loading older chunks. The current patch fixes Moonrise overwriting the completed retrogen status. Rebuild with the updated patch in a fresh build directory before testing an existing-world copy. See [the regression evidence](validation/retrogen-preservation.json); this correction does not certify every world or plugin migration.
+
 | Component | Pinned value |
 | --- | --- |
 | Paper base | `cc7b98af634be07c9b3581306c7b6af33caa3ff2` |

@@ -40,3 +40,9 @@ The probe covers adjacent-block biome precision in the world and snapshots, chun
 ## World conversion evidence
 
 The original experiment also opened a disposable 26.3 flat-world copy in two starts and inspected chunk data versions and persistent data. The input world is not distributed. Reproducing that scenario requires your own **copy** and additional checks appropriate to it. This publication's fresh-world probe does not certify conversion of your existing world.
+
+## Retrogen terrain-preservation correction
+
+Loading old full chunks on 26.4 reruns the biome conversion. Vanilla advances the persisted status back to `FULL` after that step; Moonrise previously overwrote it with `BIOMES`, which caused later terrain-generation stages to run again. The added feature patch preserves the advanced status and applies vanilla's retrogen transition to empty generation steps as well.
+
+The initial publication did not catch this regression. A later disposable normal-world migration exposed overwritten blocks and lost container contents. The corrected build was tested against untouched older chunk records with a changed world seed. Block-state and container comparisons, restart results, test totals and clean-patch replay are recorded in [retrogen-preservation.json](../validation/retrogen-preservation.json). The private input world, player data and plugin data are excluded from this repository. Fresh-world probe results alone cannot establish terrain fidelity during conversion.

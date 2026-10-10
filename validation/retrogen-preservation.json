@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-10",
+  "regression": "Moonrise overwrote the persisted status advanced by vanilla biome-only retrogen, causing terrain stages to run again on older chunks",
+  "correction": "Do not downgrade the completed persisted status; use the vanilla retrogen transition for empty generation steps",
+  "initial_publication_affected": "b63a9adf3eaec633ba2fed0d29cdbf9bdcc02202",
+  "patch_sha256": "f23878baaf3e710bc205f77fff245991c779182b7458e0b3da58a4a88f631e02",
+  "fresh_public_kit_replay": {
+    "upstream_commit": "cc7b98af634be07c9b3581306c7b6af33caa3ff2",
+    "source_patches": 935,
+    "feature_patches": 39,
+    "resource_patches": 3,
+    "build": "passed",
+    "generated_java_tree": "be38167fed4b4938f0a9f874fcceb0aa73eb3823",
+    "generated_tree_matches_corrected_source": true,
+    "jar_sha256": "56001b5569ac2f72a123669d856bfcb600b6cd1c2d9f622f2119f8e7192b472e",
+    "cache_usage": "Fresh checkout and patch application; compilation and tests reused matching Gradle cache outputs. The corrected source checkout executed the server test task; unchanged API tests reused their prior result."
+  },
+  "tests": {
+    "paper-api": {
+      "tests": 481,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2,
+      "passed": 479,
+      "reports": 36
+    },
+    "paper-server": {
+      "tests": 10104,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 86,
+      "passed": 10018,
+      "reports": 113
+    }
+  },
+  "passed": 10497,
+  "skipped": 88,
+  "runtime_regression": {
+    "input": "Untouched private 26.3 normal-world chunk records; input/player/plugin data not distributed",
+    "seed_changed": true,
+    "from_data_version": 5023,
+    "to_data_version": 5122,
+    "checked_chunks": 256,
+    "checked_containers": 745,
+    "first_start_all_block_states_and_container_items_identical": true,
+    "second_start_all_block_states_and_container_items_identical": true,
+    "all_chunks_full": true,
+    "startup_and_restart_exit_codes": [
+      0,
+      0
+    ],
+    "human_login": false,
+    "independent_source_review": "No critical or important findings in focused retrogen transition review"
+  },
+  "limitations": [
+    "Does not certify every existing world, below-zero retrogen profile, plugin or production workload",
+    "The pre-existing Geyser and Essentials version warnings remain unresolved",
+    "Fresh-world runtime probe results belong to the initial publication; the corrected build was validated with the older-world regression scenario described above"
+  ]
+}
